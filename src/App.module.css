@@ -1,0 +1,62 @@
+.App {
+  text-align: center;
+}
+
+.container{
+  position: relative;
+}
+
+.wrapper{
+  position: absolute;
+  top: calc(100% + .25rem);
+  width: 200%;
+  left: 0;
+  padding: .25rem;
+  opacity: 0;
+  transform: scale(.8);
+  transform-origin: 0% 0%;
+  transition: .3s ease-out;
+  box-shadow: 0px .1rem .5rem rgba(0, 0, 0, 0.164);
+}
+.btn{
+  width: 100%;
+  padding: .75rem;
+  border-radius: .25rem;
+  font-weight: 400;
+  text-align: start;
+  cursor: pointer;
+}
+.btn > *{
+  font-size: 1rem;
+}
+.container > .btn{
+  padding-right: 2.5rem;
+  position: relative;
+  background-color: rgba(40, 40, 248, 0.925);
+  color: white;
+  font-weight: 600;
+}
+.container > .btn::after{
+  content: '';
+  position: absolute;
+  right: .75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: .35rem solid transparent;
+  border-right: .35rem solid transparent;
+  border-top: .35rem solid #fff;
+  transition: .3s ease-in-out;
+}
+.container > .btn.open ~ .wrapper{
+  transform: scale(1);
+  opacity: 1;
+}
+.container > .btn.open::after{
+  transform: rotateZ(-180deg);
+}
+.container > .btn:hover{
+  background-color: rgba(36, 36, 221, 0.925);
+}
+.wrapper .btn:hover{
+  background-color: rgba(231, 231, 231, 0.788);
+}
